@@ -11,16 +11,16 @@
       Clear country
     </button>
   </main>
-  <main class="flex flex-col align-center justify-center text-center" v-else>
-    <div class="text-gray-500 text-3xl mt-10 mb-6">Fetching Data</div>
-    <img :src="loadingImage" class="w-24 m-auto" alt="" />
-  </main>
+  <div v-else>
+    <Loading />
+  </div>
 </template>
 
 <script>
 import DataTitle from "@/components/DataTile";
 import DataBoxes from "@/components/DataBoxes";
 import CountrySelect from "@/components/CountrySelect";
+import Loading from "@/components/Loading";
 // @ is an alias to /src
 
 export default {
@@ -29,6 +29,7 @@ export default {
     DataTitle,
     DataBoxes,
     CountrySelect,
+    Loading,
   },
   data() {
     return {

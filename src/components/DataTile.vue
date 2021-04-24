@@ -6,13 +6,13 @@
 </template>
 
 <script>
-import moment from "moment";
+import { format } from "date-fns";
 export default {
   name: "DataTitle",
   props: ["text", "dataDate"],
   computed: {
     timestamp: function () {
-      return moment(this.dataDate).format("MMMM Do YYYY, H:mm:ss a");
+      return format(new Date(this.dataDate), "MMMM do yyyy , H:mm:ss a");
     },
   },
 };
